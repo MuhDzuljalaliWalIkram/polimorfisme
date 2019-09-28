@@ -1,0 +1,73 @@
+class FakultasTeknik:
+    def __init__(self,Universitas, Fakultas, TahunAjar):
+        self.universitas = Universitas
+        self.Fakultas = Fakultas
+        self.TahunAjar = TahunAjar
+    def CetakData(self):
+        print('Universitas   : ',self.universitas)
+        print('Fakultas      : ',self.Fakultas)
+        print('Tahun Ajaran  : ',self.TahunAjar)
+
+class TeknikKomputer(FakultasTeknik):
+    def __init__(self,Universitas, Fakultas, TahunAjar, JumlahAngkatan):
+        self.JA = JumlahAngkatan
+        FakultasTeknik.__init__(self,Universitas, Fakultas, TahunAjar)
+    def CetakData(self):
+        print(200 * '=')
+        print('Teknik Komputer')
+        print('Universitas   : ', self.universitas)
+        print('Fakultas      : ', self.Fakultas)
+        print('Tahun Ajaran  : ', self.TahunAjar)
+        print('Jumlah Angkatan di prodi Teknik Kompter adalah', self.JA)
+        print(200 * '=')
+
+class PTIK(FakultasTeknik):
+    def __init__(self, Universitas, Fakultas, TahunAjar, JumlahAngkatan, Jurusan):
+        self.JA = JumlahAngkatan
+        self.Jurusan = Jurusan
+        FakultasTeknik.__init__(self, Universitas, Fakultas, TahunAjar)
+
+    def CetakData(self):
+        print('Pendidikan Teknik Informatika & Komputer')
+        print('Universitas   : ', self.universitas)
+        print('Fakultas      : ', self.Fakultas)
+        print('Jurusan      : ', self.Jurusan)
+        print('Tahun Ajaran  : ', self.TahunAjar)
+        print('Jumlah Angkatan di prodi Teknik Kompter adalah', self.JA)
+        print(200 * '=')
+class Mekatronika(FakultasTeknik):
+    def __init__(self, Universitas, Fakultas, TahunAjar, JumlahAngkatan):
+        self.JA = JumlahAngkatan
+        FakultasTeknik.__init__(self, Universitas, Fakultas, TahunAjar)
+
+    def CetakData(self):
+        print('Pendidikan Vokasi Mekatronika')
+        print('Universitas   : ', self.Universitas)
+        print('Fakultas      : ', self.Fakultas)
+        print('Tahun Ajaran  : ', self.TahunAjar)
+        print('Jumlah Angkatan di prodi Teknik Kompter adalah', self.JA)
+        print(200 * '=')
+
+
+def main():
+
+    a = FakultasTeknik('UNM', 'Teknik', 2018, )
+    a.CetakData()
+
+    del a
+
+    a = TeknikKomputer('UNM', 'Teknik', 2018, 8 )
+    a.CetakData()
+
+    b = PTIK('UNM', 'Teknik', 2018, 12, 'Pendidikan Teknik Elektro')
+    b.CetakData()
+
+    del b
+
+    b = Mekatronika('UNM', 'Teknik', 2018, 6)
+    b.CetakData()
+
+
+
+if __name__ == "__main__":
+    main()
